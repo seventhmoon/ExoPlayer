@@ -195,10 +195,8 @@ import java.util.List;
   }
 
   private void parseMediaFormat(NalUnitTargetBuffer sps, NalUnitTargetBuffer pps) {
-    byte[] spsData = new byte[sps.nalLength];
-    byte[] ppsData = new byte[pps.nalLength];
-    System.arraycopy(sps.nalData, 0, spsData, 0, sps.nalLength);
-    System.arraycopy(pps.nalData, 0, ppsData, 0, pps.nalLength);
+    byte[] spsData = Arrays.copyOf(sps.nalData, sps.nalLength);
+    byte[] ppsData = Arrays.copyOf(pps.nalData, pps.nalLength);
     List<byte[]> initializationData = new ArrayList<>();
     initializationData.add(spsData);
     initializationData.add(ppsData);
