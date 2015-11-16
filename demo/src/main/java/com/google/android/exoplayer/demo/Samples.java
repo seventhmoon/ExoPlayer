@@ -45,6 +45,9 @@ import java.util.Locale;
   }
 
   public static final Sample[] YOUTUBE_DASH_MP4 = new Sample[] {
+    new Sample("TEMPTEMPTEMP (H262)", "https://storage.googleapis.com/exoplayer-test-media-1/"
+        + "mpeg2/bbb-hls-1920x1080-30fps/playlist.m3u8",
+        PlayerActivity.TYPE_HLS),
     new Sample("Google Glass (MP4,H264)",
         "http://www.youtube.com/api/manifest/dash/id/bf5bb2419360daf1/source/youtube?"
         + "as=fmp4_audio_clear,fmp4_sd_hd_clear&sparams=ip,ipbits,expire,source,id,as&ip=0.0.0.0&"

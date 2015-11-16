@@ -115,12 +115,12 @@ import java.util.List;
           }
 
           int nalUnitType = NalUnitUtil.getNalUnitType(dataArray, nextNalUnitOffset);
-          int bytesWrittenPastNalUnit = limit - nextNalUnitOffset;
           switch (nalUnitType) {
             case NAL_UNIT_TYPE_IDR:
               isKeyframe = true;
               break;
             case NAL_UNIT_TYPE_AUD:
+              int bytesWrittenPastNalUnit = limit - nextNalUnitOffset;
               if (foundFirstSample) {
                 if (ifrParserBuffer != null && ifrParserBuffer.isCompleted()) {
                   int sliceType = ifrParserBuffer.getSliceType();
